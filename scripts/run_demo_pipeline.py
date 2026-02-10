@@ -45,7 +45,7 @@ def main() -> None:
 
     # 1) BALI
     run([
-        sys.executable, "bali_for_bets_v2.py",
+        sys.executable, "pipelines/bali_for_bets_v2.py",
         "--emb-root", str(emb_root),
         "--data-type", args.stream,
         "--risk-model", args.risk_model,
@@ -54,7 +54,7 @@ def main() -> None:
 
     # 2) GHMM
     run([
-        sys.executable, "ghmm_improved_v5_3class_optimized.py",
+        sys.executable, "pipelines/ghmm_improved_v5_3class_optimized.py",
         "--data-type", args.stream,
         "--embeddings-root", str(emb_root),
         "--output-dir", args.out_dir,
