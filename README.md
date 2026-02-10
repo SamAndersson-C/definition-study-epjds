@@ -12,7 +12,7 @@ Raw behavioural telemetry and manual analyst assessments used in the paper are *
 
 This repository therefore provides:
 
-- the end-to-end pipeline code (preprocessing → feature engineering → representation learning → BALI → GHMM),
+- the end-to-end pipeline implementation (preprocessing → feature engineering → representation learning → BALI → GHMM),
 - configuration templates,
 - and a **synthetic demo dataset** sufficient to run a smoke-test of the public pipeline.
 
@@ -20,26 +20,78 @@ See `data/README.md` and `data/demo/README.md`.
 
 ## Quick start (synthetic demo)
 
-This demo runs **BALI + GHMM** on the synthetic embeddings in `data/demo/` so that others can execute the code without restricted data.
+This repository includes a **fully runnable synthetic demo** that exercises the public pipeline (**BALI → GHMM**) without requiring restricted data.
+
+The demo uses pre-generated synthetic embeddings in `data/demo/` and is intended solely as a **smoke test** of the code structure and execution flow.
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate   # Linux/macOS
-# .venv\Scripts\activate  # Windows PowerShell
+source .venv/bin/activate   # Linux / macOS
+# .venv\Scripts\activate    # Windows PowerShell
 
 pip install -U pip
 pip install -r requirements-demo.txt
 
-# Example: run BALI on demo bets embeddings
-python bali_for_bets_v2.py --emb-root data/demo --data-type bets --risk-model logreg --out-suffix _bali
-
-# Example: run GHMM on demo bets embeddings
-python ghmm_improved_v5_3class_optimized.py --data-type bets --embeddings-root data/demo --output-dir outputs/demo_ghmm --n-states-grid 6,8 --reduce-dim 12
+# One-command demo: runs BALI → GHMM on synthetic bets data
+python scripts/run_demo_pipeline.py --stream bets
 ```
 
-Full instructions: `docs/DEMO_PIPELINE.md`.
+Supported demo streams are:
 
-**Important:** any metrics produced on the demo data are meaningless and must not be compared to the paper’s results.
+- `bets`
+- `transactions`
+- `sessions`
+- `payments`
+
+Full step-by-step instructions are provided in `docs/DEMO_PIPELINE.md`.
+
+**Important:** Any metrics produced on the synthetic demo data are not meaningful and must not be compared to the paper’s results.
+
+## Repository structure
+
+The repository is organised to separate **entrypoints**, **implementation**, **documentation**, and **data**.
+
+```
+.
+├── scripts/                 # User-facing entrypoints (CLI wrappers)
+│   ├── run_demo_pipeline.py # One-command synthetic demo (BALI → GHMM)
+│   └── make_demo_data.py    # Deterministic synthetic data generator
+│
+├── pipelines/               # Core pipeline implementations (not user API)
+│   ├── bali_for_bets_v2.py
+│   ├── ghmm_improved_v5_3class_optimized.py
+│   ├── preprocessing_final_script_dates_thread_safe_final.py
+│   ├── enhanced_feature_engineering_final_script_final_use.py
+│   ├── train_hierarchical_risk_priors_check_v3.py
+│   └── prototype_teacher_student_version_october_27_final.py
+│
+├── experiments/             # Prototypes / exploratory scripts (not required for demo)
+│   └── feature_selection_prototype.py
+│
+├── data/
+│   ├── demo/                # Synthetic demo data (public)
+│   └── README.md            # Data access and restrictions
+│
+├── docs/
+│   ├── DEMO_PIPELINE.md     # Detailed demo instructions (copy/paste)
+│   └── REPRODUCIBILITY.md   # Intended full pipeline order (restricted data context)
+│
+├── configs/                 # Configuration templates (YAML)
+├── outputs/                 # Runtime outputs (ignored by git)
+├── env.example              # Environment variable template (no secrets)
+├── utils.py                 # Shared helpers
+├── requirements-demo.txt    # Minimal dependencies for demo
+├── requirements.in          # Full internal environment (reference)
+├── CITATION.cff             # Citation metadata (update DOI once archived)
+├── LICENSE                  # License file (replace placeholder)
+└── README.md
+```
+
+Notes:
+
+- Only files in `scripts/` are intended to be executed directly.
+- Files in `pipelines/` implement the methodological components described in the paper.
+- Real data and operator-specific integrations are not included.
 
 ## Full pipeline (restricted data)
 
@@ -49,9 +101,8 @@ See `docs/REPRODUCIBILITY.md` for the intended order of operations.
 
 ## Citation
 
-Add/update `CITATION.cff` once an archival DOI is available (e.g., Zenodo).
+Update `CITATION.cff` once an archival DOI is available (e.g., Zenodo).
 
 ## Licence
 
-**TODO:** choose a licence consistent with organisational and co-author requirements.
-
+Choose a licence consistent with organisational and co-author requirements.
