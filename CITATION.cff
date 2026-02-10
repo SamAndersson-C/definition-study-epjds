@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated EPJ Data Science article (details to be added)."
+title: "Definition Study (EPJDS) code"
+authors:
+  - family-names: Andersson
+    given-names: Sam
+# TODO: add co-authors
+version: "0.1.0"
+date-released: "2026-02-06"
+# TODO: add DOI after Zenodo release

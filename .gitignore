@@ -1,0 +1,39 @@
+# Secrets
+.env
+env.env.txt
+*.key
+
+# Virtualenvs
+.venv/
+venv/
+
+# Outputs / artefacts
+processed_data/
+plots/
+outputs/
+
+# Default: do not commit large data artefacts
+data/
+!data/README.md
+!data/demo/
+!data/demo/**
+
+# Large intermediate artefacts
+*_embeddings*/
+final_embeddings*/
+*_consistency*/
+*.pt
+*.pth
+
+# Default: do not commit NPZ artefacts...
+*.npz
+# ...but allow the small synthetic demo NPZ files shipped with the repo
+!data/demo/**/*.npz
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

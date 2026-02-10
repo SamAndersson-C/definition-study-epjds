@@ -1,0 +1,22 @@
+# Minimal dependency list (pin versions in your execution environment)
+
+numpy
+pandas
+scipy
+scikit-learn
+pyyaml
+matplotlib
+seaborn
+statsmodels
+joblib
+tqdm
+numba
+hmmlearn
+torch
+python-dotenv
+sqlalchemy
+psycopg2-binary
+
+# Optional (only if used):
+xgboost
+lightgbm

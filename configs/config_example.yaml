@@ -1,0 +1,14 @@
+# Example configuration (fill in for your environment)
+
+project:
+  seed: 42
+  data_type: "transactions"   # one of: transactions, sessions, payments, bets
+  window_type: "calendar"     # or: activity
+
+paths:
+  raw_data_root: "./data"     # local exports or synthetic demo data
+  output_root: "./outputs"
+
+# Database settings should NOT be committed; use environment variables or a local .env file.
+database:
+  use_database: false

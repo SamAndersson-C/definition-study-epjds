@@ -1,0 +1,12 @@
+# Minimal dependencies for running the *synthetic demo* pipeline.
+# For the full pipeline (incl. database preprocessing + deep models), use requirements.in.
+
+numpy
+pandas
+scipy
+scikit-learn==1.8.0
+joblib
+tqdm
+pyyaml
+hmmlearn
+matplotlib
