@@ -101,8 +101,16 @@ See `docs/REPRODUCIBILITY.md` for the intended order of operations.
 
 ## Citation
 
-Update `CITATION.cff` once an archival DOI is available (e.g., Zenodo).
+Please cite this repository using `CITATION.cff` (GitHub’s “Cite this repository” button)
+and the archival DOI once minted (e.g., Zenodo) after the first public release.
+
+For now, refer to the GitHub repository URL and the release tag (e.g., `v0.1.0`) in the manuscript.
+
 
 ## Licence
 
-Choose a licence consistent with organisational and co-author requirements.
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
+
+If you use, modify, or redistribute this code (or derivative works), you must do so under
+GPL-3.0-compatible terms and provide appropriate attribution. Proprietary redistribution
+is not permitted without explicit re-licensing by the copyright holder(s).

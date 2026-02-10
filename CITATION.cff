@@ -1,4 +1,24 @@
 cff-version: 1.2.0
+message: >
+  If you use this software, please cite the associated EPJ Data Science article
+  and the software release archived for reproducibility.
+
+title: "Definition Study (EPJ Data Science) — Reproducibility Code"
+
+authors:
+  - family-names: Andersson
+    given-names: Sam
+
+version: "0.1.0"
+date-released: "2026-02-10"
+
+license: GPL-3.0-or-later
+
+repository-code: "https://github.com/SamAndersson-C/definition-study-epjds"
+
+# DOI will be added after the first public release is archived (e.g., Zenodo)
+# doi: "10.5281/zenodo.XXXXXXX"
+cff-version: 1.2.0
 message: "If you use this software, please cite the associated EPJ Data Science article (details to be added)."
 title: "Definition Study (EPJDS) code"
 authors:
