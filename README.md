@@ -1,8 +1,10 @@
 # Definition Study (EPJ Data Science) — Reproducibility Repository
 
-This repository contains code for the EPJ Data Science Regular Article:
+This repository contains code for the manuscript entitled:
 
 > *Heavy-tail-aware representation learning and dynamic Bayesian state modelling to derive an operational proxy definition of problem gambling risk*
+
+submitted to EPJ Data Science.
 
 The project is designed for **operational monitoring / triage evaluation**, not clinical diagnosis.
 
@@ -83,7 +85,7 @@ The repository is organised to separate **entrypoints**, **implementation**, **d
 ├── requirements-demo.txt    # Minimal dependencies for demo
 ├── requirements.in          # Full internal environment (reference)
 ├── CITATION.cff             # Citation metadata (update DOI once archived)
-├── LICENSE                  # License file (replace placeholder)
+├── LICENSE                  # GNU GPL-3.0 license
 └── README.md
 ```
 
@@ -101,10 +103,10 @@ See `docs/REPRODUCIBILITY.md` for the intended order of operations.
 
 ## Citation
 
-Please cite this repository using `CITATION.cff` (GitHub’s “Cite this repository” button)
-and the archival DOI once minted (e.g., Zenodo) after the first public release.
 
-For now, refer to the GitHub repository URL and the release tag (e.g., `v0.1.0`) in the manuscript.
+Please cite this repository using the Zenodo DOI associated with the archived release (see DOI badge above) 
+and the metadata provided in CITATION.cff.
+
 
 
 ## Licence
